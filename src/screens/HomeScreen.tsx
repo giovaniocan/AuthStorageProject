@@ -24,6 +24,11 @@ export function HomeScreen(){
         navigation.navigate('SecureStore' as never); // Forçando a tipagem para 'never'
     };
 
+    const goToNotification = () => {
+        navigation.navigate('Notifications' as never); // Forçando a tipagem para 'never'
+    };
+    
+
     return(
         <View style={styles.container}>
             <Text style={styles.title}>
@@ -36,6 +41,10 @@ export function HomeScreen(){
             <MyButton
                 title="Ir para Secure Storage" 
                 onPress={goToSecureStore}
+            />
+            <MyButton
+                title="Ir notificações" 
+                onPress={goToNotification}
             />
             <Text>
                 by <Text style={styles.coffText}>GiovaniOcan</Text>
