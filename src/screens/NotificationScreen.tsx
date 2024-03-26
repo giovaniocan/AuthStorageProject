@@ -21,8 +21,8 @@ export function NotificationScreen(){
             Alert.alert("Você não deixou as notificações ativas")
             return;
         }
-
-        await Notifications.scheduleNotificationAsync({
+         //aqui é para fazer de forma local, eu comentei pq vou fazer via api
+         await Notifications.scheduleNotificationAsync({
             content:{ // o corpo da mensagem
                 title: "Notificação",
                 body:"Notification baby",
@@ -30,7 +30,11 @@ export function NotificationScreen(){
             trigger:{ // gatilho, quanto tempo depois vamos mandar(dias, meses, dias da semnaa, e afins)
                     seconds:5,
             }
-        })
+        }) 
+
+
+        //const token = await Notifications.getExpoPushTokenAsync()
+        //console.log(token) a gente pega esse token e entra no site https://expo.dev/notifications,cola o tokene sai usando 
     }
 
     return(
